@@ -66,7 +66,5 @@ A aplicação permite:
  `python -m nltk.downloader punkt`
 
  5. Execute o Projeto
- 
-`python run.py`
 
----
+`python run.py`
