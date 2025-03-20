@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <title>Extrator de Valores Monetários</title>
+</head>
+<body>
+
+<div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+            <hr>
+            <h1>Extrator de Valores Monetários</h1>
+            <p class="app-description">
+                O extrator de valores monetários é uma aplicação desenvolvida pela Diretoria de Inteligência Artificial, Ciência de Dados e Estatística (DIACDE) com 
+                o objetivo de automatizar a extração de valores monetários em textos, como contratos, petições, entre outros.
+            </p>
+        </div>
+        <div class="sidebar-footer">
+            © 2025 - @ TJGO - DIACE
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <div class="input-group">
+            <h5>📄 Processo: </h5>
+            <textarea id="input-texto" placeholder="insira o texto aqui..."></textarea>
+        </div>
+        
+        <div class="button-group">
+            <button onclick="extractValues()" class="btn-extract">🔍 Extrair Valores</button>
+            <button onclick="clearValues()" class="btn-clear">Limpar</button>
+        </div>
+        
+        <div id="results"></div>
+    </div>
+</div>
+
+<!-- JS -->
+<script>
+    async function extractValues() {
+        const texto = document.getElementById("input-texto").value;
+
+        if (!texto.trim()) {
+            alert("Por favor, insira um texto!");
+            return;
+        }
+
+        const response = await fetch('/extract', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({texto})
+        });
+
+        const data = await response.json();
+
+        let resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = '';
+
+        if (data.length) {
+            data.forEach(item => {
+                resultsDiv.innerHTML += `
+                    <div class="card">
+                        <h4>💰 Valor: ${item.Valor}</h4>
+                        <p>📌 Contexto: ${item.Contexto}</p>
+                        {#<p>🔖 Entidades: ${item.Entidades.map(e => `${e[0]} (${e[1]})`).join(', ')}</p>#}
+                    </div>
+                `;
+            });
+        } else {
+            resultsDiv.innerHTML = `<p class="no-results">Nenhum valor encontrado.</p>`;
+        }
+    }
+
+    function clearValues() {
+        document.getElementById("input-texto").value = '';
+        document.getElementById('results').innerHTML = '';
+    }
+</script>
+
+</body>
+</html>

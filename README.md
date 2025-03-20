@@ -16,8 +16,6 @@ A aplicação permite:
 
 # 🚀 Extrator de Valores Monetários com Flask
 
-![Logo](app/static/logo.png)
-
 ## 🏆 Tecnologias Utilizadas  
 
 | Tecnologia | Versão | Descrição |
@@ -33,8 +31,6 @@ A aplicação permite:
 
 ---
 
-## 📸 Tela Inicial  
-![Tela Inicial](app/static/screenshot.png)
 
 ---
 ```
