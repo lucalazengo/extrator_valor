@@ -58,7 +58,9 @@ A aplicação permite:
  3. Instale as Dependências
 `pip install -r requirements.txt`
  4. Baixe o Modelo spaCy
+ 
   `python -m spacy download pt_core_news_sm`
+
  `python -m nltk.downloader punkt`
  5. Execute o Projeto
 `python run.py`
