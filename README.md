@@ -67,4 +67,4 @@ A aplicação permite:
 
  5. Execute o Projeto
 
-`python run.py`
+`python app.py`
