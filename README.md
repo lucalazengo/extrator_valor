@@ -38,15 +38,19 @@ A aplicação permite:
 
 📂 extract_valor
 ├── 📂 app
-│   ├── 📂 static               # Arquivos CSS e JS
-│   ├── 📂 templates            # Arquivos HTML (Jinja2)
-│   ├── 📄 __init__.py          # Inicialização do app Flask
-│   ├── 📄 routes.py            # Definição das rotas Flask
-│   ├── 📄 extract_b.py         # Lógica de extração de valores
-├── 📄 Dockerfile               # Configuração Docker
-├── 📄 docker-compose.yml       # Configuração Docker Compose
-├── 📄 requirements.txt         # Lista de dependências
-├── 📄 README.md                # Documentação
+│   ├── 📂 static               
+│   ├── 📂 templates            
+│   ├── 📄 __init__.py          
+│   ├── 📄 routes.py           
+│   ├── 📄 extract_b.py         
+├── 📄 Dockerfile              
+├── 📄 docker-compose.yml      
+├── 📄 requirements.txt         
+├── 📄 .gitignore              
+├── 📄 app.py                
+├── 📄 README.md               
+
+
 
 ```
 ---

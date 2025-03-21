@@ -127,6 +127,7 @@ h1 {
     background-color: #ecf0f1;
     padding: 15px;
     margin-top: 10px;
+    margin-right: 200px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     border-left: 4px solid #4f92eb;
@@ -145,6 +146,7 @@ h1 {
 .card p {
     margin: 5px 0;
     color: #7f8c8d;
+    text-decoration-color: #141414;
 }
 
 /* =============== NO RESULTS =============== */
